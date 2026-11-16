@@ -36,10 +36,14 @@ export const Route = createFileRoute("/")({
 });
 
 const WEDDING = new Date("2026-12-10T20:00:00+05:30").getTime();
-const MAPS =
+const RUTBA_MAPS =
+  "https://www.google.com/maps/search/?api=1&query=Rutba+banquet+ambala+road+saharanpur";
+const JAYKIM_MAPS =
   "https://www.google.com/maps/search/?api=1&query=Jaykim+The+JKK+orchid+delhi+road+saharanpur";
+const LAVASSA_MAPS =
+  "https://www.google.com/maps/search/?api=1&query=Lavassa+delhi+road+saharanpur";
 const CAL =
-  "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Raghav+%26+Aastha+Wedding&dates=20261210T143000Z/20261211T183000Z&location=Jaykim+The+JKK+Orchid,+Delhi+Road,+Saharanpur&details=Ring+Ceremony+10th+Dec,+Haldi+Soir%C3%A9e+11th+Dec,+Saat+Phere+%26+Beyond+11th+Dec";
+  "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Raghav+%26+Aastha+Wedding&dates=20261210T143000Z/20261211T183000Z&location=Rutba+Banquet,+Ambala+Road,+Saharanpur&details=Ring+Ceremony+10th+Dec+(Jaykim+Orchid),+Haldi+Soir%C3%A9e+11th+Dec+(Lavassa),+Saat+Phere+%26+Beyond+11th+Dec+(Rutba+Banquet)";
 
 const EVENTS = [
   {
@@ -722,24 +726,42 @@ function Invite() {
         </div>
 
         {/* Bottom Meta */}
-        <div className="relative z-10 shrink-0 px-6 pb-10 sm:pb-12">
+        <div className="relative z-10 shrink-0 px-6 pb-8 sm:pb-10">
           <div data-hero-meta>
             <Rule />
           </div>
           <p
             data-hero-meta
-            className="mt-4 font-display text-xl font-light tracking-[0.35em] text-gold-soft sm:text-3xl md:text-4xl"
+            className="mt-3 font-display text-xl font-light tracking-[0.35em] text-gold-soft sm:text-3xl md:text-4xl"
           >
             10 · 11 · XII · 2026
           </p>
-          <p data-hero-meta className="smallcaps mt-2 text-gold/70 sm:mt-3">
+          <p data-hero-meta className="smallcaps mt-1 text-gold/70 sm:mt-2">
             Saharanpur · Uttar Pradesh
           </p>
+
+          {/* Scroll Down Symbol */}
+          <a
+            href="#the-couple"
+            aria-label="Scroll down to the invitation"
+            data-hero-meta
+            className="group mt-4 inline-flex flex-col items-center gap-1 transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <span className="smallcaps !text-[0.52rem] !tracking-[0.32em] text-gold/70 group-hover:text-gold transition-colors">
+              Scroll Down
+            </span>
+            <div className="relative flex h-7 w-4.5 items-start justify-center rounded-full border border-gold/60 p-1 group-hover:border-gold transition-colors">
+              <span className="h-1.5 w-1 rounded-full bg-gold animate-bounce" />
+            </div>
+            <span aria-hidden className="text-[0.65rem] text-gold/70 group-hover:text-gold -mt-1 animate-pulse">
+              ⌄
+            </span>
+          </a>
         </div>
       </section>
 
       {/* ---------- The Couple ---------- */}
-      <section className="grain relative overflow-hidden px-6 py-28 text-center">
+      <section id="the-couple" className="grain relative overflow-hidden px-6 py-28 text-center scroll-mt-6">
         <div className="absolute inset-0 vignette" />
         <div className="relative mx-auto max-w-5xl">
           <Heading kicker="The Couple" title="Two hearts, one thread" />
@@ -966,7 +988,7 @@ function Invite() {
         />
         <div className="relative flex min-h-[44rem] flex-col items-center px-6 pt-40 pb-20">
           <p data-reveal className="smallcaps text-gold/80">
-            Kindly respond
+            Kindly respond · Kalra &amp; Bathla Family
           </p>
           <h3
             data-reveal
@@ -981,35 +1003,75 @@ function Invite() {
           </div>
           <a
             data-reveal
-            href="mailto:?subject=RSVP%20%E2%80%94%20Raghav%20%26%20Aastha%20Wedding&body=We%20will%20be%20delighted%20to%20attend!%20Guest%20Name(s)%3A%20"
+            href="mailto:?subject=RSVP%20%E2%80%94%20Raghav%20%26%20Aastha%20Wedding%20(Kalra%20%26%20Bathla%20Family)&body=Dear%20Kalra%20%26%20Bathla%20Family%2C%0A%0AWe%20will%20be%20delighted%20to%20attend!%0AGuest%20Name(s)%3A%20"
             className="premium-action foil-fill smallcaps mt-10 inline-flex items-center gap-4 rounded-full px-12 py-4 !text-[0.75rem] text-primary"
           >
             RSVP <span aria-hidden className="h-[0.5px] w-6 bg-primary/70" />
           </a>
-          <a
-            data-reveal
-            href={MAPS}
-            target="_blank"
-            rel="noreferrer"
-            className="premium-action smallcaps mt-5 inline-flex items-center gap-3 rounded-full border-[0.5px] border-gold/60 bg-background/40 px-8 py-3 text-gold-soft backdrop-blur transition-colors duration-500 hover:border-gold hover:bg-background/60"
-          >
-            Directions{" "}
-            <span aria-hidden className="font-display text-base normal-case tracking-normal">
-              →
-            </span>
-          </a>
+
+          {/* Rutba's Location Section */}
+          <div data-reveal className="mt-10 flex flex-col items-center max-w-md text-center">
+            <p className="smallcaps !text-[0.62rem] !tracking-[0.3em] text-gold/80">
+              Wedding &amp; Reception Venue
+            </p>
+            <p className="mt-2 font-display text-2xl font-light italic text-gold-soft sm:text-3xl">
+              Rutba Banquet
+            </p>
+            <p className="mt-1 text-sm text-gold-soft/75">
+              Ambala Road, Saharanpur, Uttar Pradesh
+            </p>
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
+              <a
+                href={RUTBA_MAPS}
+                target="_blank"
+                rel="noreferrer"
+                className="premium-action smallcaps inline-flex items-center gap-2.5 rounded-full border-[0.5px] border-gold/70 bg-background/50 px-8 py-3 text-gold-soft backdrop-blur transition-colors duration-500 hover:border-gold hover:bg-background/70 hover:text-gold"
+              >
+                <span>Directions to Rutba</span>
+                <span aria-hidden className="font-display text-base normal-case tracking-normal">
+                  →
+                </span>
+              </a>
+              <a
+                href={JAYKIM_MAPS}
+                target="_blank"
+                rel="noreferrer"
+                className="premium-action smallcaps inline-flex items-center gap-2 rounded-full border-[0.5px] border-gold/40 bg-background/30 px-5 py-3 !text-[0.65rem] text-gold-soft/75 backdrop-blur transition-colors duration-500 hover:border-gold hover:bg-background/50 hover:text-gold"
+              >
+                <span>Jaykim Orchid</span>
+                <span aria-hidden className="text-xs">↗</span>
+              </a>
+              <a
+                href={LAVASSA_MAPS}
+                target="_blank"
+                rel="noreferrer"
+                className="premium-action smallcaps inline-flex items-center gap-2 rounded-full border-[0.5px] border-gold/40 bg-background/30 px-5 py-3 !text-[0.65rem] text-gold-soft/75 backdrop-blur transition-colors duration-500 hover:border-gold hover:bg-background/50 hover:text-gold"
+              >
+                <span>Lavassa</span>
+                <span aria-hidden className="text-xs">↗</span>
+              </a>
+            </div>
+          </div>
+
           <a
             data-reveal
             href={CAL}
             target="_blank"
             rel="noreferrer"
-            className="premium-link smallcaps mt-6 text-gold/60 transition-colors hover:text-gold"
+            className="premium-link smallcaps mt-7 text-gold/60 transition-colors hover:text-gold"
           >
             Add to calendar
           </a>
-          <p data-reveal className="mt-16 font-script text-4xl text-gold/80">
-            With love, Raghav & Aastha
-          </p>
+
+          {/* Kalra & Bathla Family Acknowledgement */}
+          <div data-reveal className="mt-16 text-center">
+            <p className="font-script text-4xl sm:text-5xl text-gold/85">
+              With love, Raghav &amp; Aastha
+            </p>
+            <p className="smallcaps mt-3 !text-[0.72rem] !tracking-[0.36em] text-gold/80">
+              Kalra &amp; Bathla Family
+            </p>
+          </div>
         </div>
       </section>
     </main>
